@@ -1,0 +1,41 @@
+{% extends 'MainBundle::layout.html.twig' %}
+{% block title %}RetweetStat {% endblock %}
+
+{% block body %}
+    <h1>RetweetStat</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ retweetStat.id }}</td>
+            </tr>
+            <tr>
+                <th>Idtweet</th>
+                <td>{{ retweetStat.idTweet }}</td>
+            </tr>
+            <tr>
+                <th>Idretweet</th>
+                <td>{{ retweetStat.idRetweet }}</td>
+            </tr>
+            <tr>
+                <th>Idretweeter</th>
+                <td>{{ retweetStat.idRetweeter }}</td>
+            </tr>
+            <tr>
+                <th>Datetime</th>
+                <td>{% if retweetStat.datetime %}{{ retweetStat.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Iduser</th>
+                <td>{{ retweetStat.idUser }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('retweetstat_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

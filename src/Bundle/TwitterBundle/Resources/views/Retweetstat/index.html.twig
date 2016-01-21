@@ -1,0 +1,39 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title %}RetweetStat {% endblock %}
+
+{% block body %}
+    <h1>RetweetStat </h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tweet</th>
+                <th>Retweet</th>
+                <th>Retweeter</th>
+                <th>Datetime</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for retweetStat in retweetStats %}
+            <tr>
+                <td><a href="{{ path('retweetstat_show', { 'id': retweetStat.id }) }}">{{ retweetStat.id }}</a></td>
+                <td>
+                  <a href="https://twitter.com/{{ retweetStat.userScreenName }}/status/{{ retweetStat.idTweet }}" target="_blank">
+                  {{ retweetStat.text }}
+                  </a>
+                </td>
+                <td>
+                  <a href="https://twitter.com/JdLabails/status/{{ retweetStat.idRetweet }}" target="_blank">
+                  {{ retweetStat.idRetweet }}
+                  </a>
+                </td>
+                <td>{{ retweeters[retweetStat.idRetweeter] }}</td>
+                <td>{% if retweetStat.datetime %}le {{ retweetStat.datetime|date('d/m/y à H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

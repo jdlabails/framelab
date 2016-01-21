@@ -1,0 +1,54 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <h2>Liste des utilisateurs connus</h2>
+        
+        
+    <div id="res" style="margin-top:10px">
+        {% if users %}
+            <table class="table table-bordered table-hover records_list">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Last login</th>
+                    <th>Rôles</th>
+                    <th>Locked/Enable</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+            {% for user in users if user != 'count' %}
+            <tr>
+                <td></td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}} </td>
+                <td>{% if user.lastLogin %} {{user.lastLogin|date('d/m/Y')}} {% endif %} </td>
+                <td>
+                    {% for r in user.roles %}
+                        {{r}}
+                    {% endfor %}
+                </td>
+                <td>
+                    {{ user.locked ? 'locked' : 'not locked' }}
+                    and 
+                    {{ user.enabled  ? ' enabled' : ' disabled' }}
+                </td>
+                <td>
+                    <a href="{{path('atelier_user_edit', {'id':user.id})}}">
+                        <span class="glyphicon glyphicon-edit" title="Modifier cet utilisateur"></span>
+                    </a>
+                    <a href="{{path('atelier_user_delete', {'id':user.id})}}">
+                        <span class="glyphicon glyphicon-trash" title="Supprimer cet utilisateur"></span>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            Aucun utilisateur
+        {% endif %}
+    </div>    
+    
+{% endblock %}

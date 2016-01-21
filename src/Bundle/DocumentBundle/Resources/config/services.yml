@@ -1,0 +1,9 @@
+parameters:
+    document.upload_dir: uploads/documents
+
+services:
+    document.upload_configuration_subscriber:
+        class: Framelab\Bundle\DocumentBundle\EventListener\DocumentConfigurationSubscriber
+        arguments: [ "%kernel.root_dir%", "%document.upload_dir%", "@security.token_storage" ]
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }

@@ -1,0 +1,30 @@
+service:
+    path:     /
+    defaults: { _controller: "PersonBundle:Service:index" }
+
+service_show:
+    path:     /{id}/show
+    defaults: { _controller: "PersonBundle:Service:show" }
+
+service_new:
+    path:     /new
+    defaults: { _controller: "PersonBundle:Service:new" }
+
+service_create:
+    path:     /create
+    defaults: { _controller: "PersonBundle:Service:create" }
+    requirements: { method: post }
+
+service_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PersonBundle:Service:edit" }
+
+service_update:
+    path:     /{id}/update
+    defaults: { _controller: "PersonBundle:Service:update" }
+    requirements: { method: post|put }
+
+service_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PersonBundle:Service:delete" }
+    requirements: { method: post|delete|get }

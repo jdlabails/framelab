@@ -1,0 +1,31 @@
+{% extends 'MainBundle::layout.html.twig' %}
+    
+{% block title -%} {{parent()}} - Service - liste{% endblock %}
+
+{% block body -%}
+    <h1>Liste des services</h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('service_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>                    
+                    <a href="{{ path('service_show', { 'id': entity.id }) }}" title="Voir"><span class="glyphicon glyphicon-eye-open"></span></a>
+                    <a href="{{ path('service_edit', { 'id': entity.id }) }}" title="Editer"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="{{ path('service_delete', { 'id': entity.id }) }}" title="Supprimer"><span class="glyphicon glyphicon-trash" style="color:red"></span></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

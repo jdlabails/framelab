@@ -1,0 +1,11 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title -%} {{parent()}} - Service - création{% endblock %}
+
+{% block body -%}
+    <h1>Service creation</h1>
+
+    {{ form(form) }}
+
+        
+{% endblock %}

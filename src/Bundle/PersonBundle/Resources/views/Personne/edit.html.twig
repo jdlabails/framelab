@@ -1,0 +1,12 @@
+
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title -%} {{parent()}} - Personne - modification{% endblock %}
+
+{% block body -%}
+    <h1>Modification d'une personne</h1>
+
+    {{ form(edit_form) }}
+
+       
+{% endblock %}

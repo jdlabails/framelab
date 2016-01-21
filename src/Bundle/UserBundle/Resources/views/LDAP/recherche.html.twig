@@ -1,0 +1,45 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <h2>Rechercher un nouvel utilisateur sur votre LDAP</h2>
+    
+    <form action="" method="POST" class="form-inline">
+        <div class="form-group">
+            <input  class="form-control" type="text" name="search" maxlength="15" value="{{search}}">
+        </div>  
+        <button class="btn btn-primary">Rechercher !</button>
+    </form>
+    
+        
+    <div id="res" style="margin-top:10px">
+        <h3>Résultats pour "{{search}}"</h3>
+        {% if res %}
+            <table class="table table-bordered table-hover records_list">
+                <thead>
+                <tr>
+                    <th>CN</th>
+                    <th>Mail</th>
+                    <th>DN</th>
+                    <th></th>
+                </tr>
+                </thead>
+            {% for user in res if user != 'count' %}
+            <tr>
+                <td>{{user['cn'][0]}}</td>
+                <td>{% if user['mail'] is defined %} {{user['mail'][0]}} {% endif %}</td>
+                <td>{{user['dn']}}</td>
+                <td>
+                    <a class="btn" href="{{path('ldap_add', {'userName':user['dn']})}}">
+                        <span class="glyphicon glyphicon-plus" title="Ajouter en tant qu'utilisateur de Sesam"></span>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            Aucun résultat
+        {% endif %}
+    </div>    
+    
+{% endblock %}

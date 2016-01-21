@@ -1,0 +1,63 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Articles</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Content</th>
+                <th>Créé le</th>
+                <th>Modifié le</th>
+                <th>Auteur</th>
+                <th>Likers</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('article_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.title }}</td>
+                    <td>{{ entity.content }}</td>
+                    <td>{% if entity.createdDate %}{{ entity.createdDate|date('d/m/Y à H:i') }}{% endif %}</td>
+                    <td>{% if entity.updatedDate %}{{ entity.updatedDate|date('d/m/Y à H:i') }}{% endif %}</td>
+                    <td>{{ entity.author }}</td>
+                    <td>
+                        
+                            {{render(controller("RateBundle:Rate:nbLike" , { 'id': entity.id, 'type' : 'post' }))}}
+                        </span>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('article_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('article_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                            <li>
+                                {{render(controller("RateBundle:Rate:likeButton" , { 'id': entity.id, 'type' : 'post' }))}}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        {# FIXME replace by FosJsRouting #}
+        var rateLikeUrl = {{ path('rate_like')|json_encode|raw }};
+    </script>
+    {% javascripts 'bundles/rate/js/rate.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% form_theme form 'MainBundle:Form:fields.html.twig' %}
+
+{% block title -%} {{parent()}} - Personne - création{% endblock %}
+
+{% block body -%}
+            
+    <h1>Création d'une personne</h1>
+
+    <div class="well">        
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_end(form) }}
+    </div>
+    
+{% endblock %}
+
+
+{% block javascripts %}
+    {{parent()}}
+    
+    <script>
+        $( document ).ready(function() {
+            console.log( "ready!" );
+            $('.datepicker').datepicker();
+        });
+    </script>
+    
+{% endblock %}
+

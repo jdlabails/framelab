@@ -1,0 +1,58 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title -%} {{parent()}} - Personne{% endblock %}
+
+{% block body -%}
+    <h1>Personne</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ entity.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ entity.dateNaissance|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ entity.tel }}</td>
+            </tr>
+            <tr>
+                <th>Service</th>
+                <td>{{ entity.service }}</td>
+            </tr>
+            <tr>
+                <th>Lieu de travail</th>
+                <td>{{ entity.lieuTravail }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('personne') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('personne_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

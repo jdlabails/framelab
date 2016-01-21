@@ -1,0 +1,13 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% form_theme form 'MainBundle:Form:fields.html.twig' %}
+
+{% block title -%} New Retweeter {% endblock %}
+
+{% block body %}
+    <h1>Nouveau Retwitter</h1>
+    <div class="well">        
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

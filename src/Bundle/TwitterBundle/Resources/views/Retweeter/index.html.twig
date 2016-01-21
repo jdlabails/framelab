@@ -1,0 +1,54 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title -%} Retweeters {% endblock %}
+
+{% block body -%}
+    
+    <h1>
+      Liste des retweeters
+      <small>
+        <a href="{{ path('retweeter_new') }}" class="btn btn-link">
+          Créer un nouveau retweeter
+        </a>
+      </small>
+    </h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Query</th>
+                <th>Frequency per day</th>
+                <th>Actif</th>
+                <th>Nb month Keeping</th>                
+                <th>Last launch</th>
+                <th>Actions</th>
+            </tr>
+        </thead> 
+        <tbody>
+        {% for retweeter in retweeters %}
+            <tr>
+                <td>{{ retweeter.id }}</td>
+                <td>{{ retweeter.name }}</td>
+                <td>{{ retweeter.query }}</td>
+                <td>{{ retweeter.frequencyPerDay }}</td>
+                <td>{% if retweeter.actif %}Yes{% else %}No{% endif %}</td>
+                <td>{{ retweeter.nbMonthKeeping }}</td>
+                <td>{{ retweeter.lastLaunch|date('d/m/y à H:i:s') }}</td>
+                <td>
+                    <a href="{{ path('retweeter_edit', { 'id': retweeter.id }) }}">
+                      <span class="glyphicon glyphicon-pencil text-info">
+                    </a>
+                    <a href="{{ path('retweeter_launch', { 'id': retweeter.id }) }}">
+                      <span class="glyphicon glyphicon-send text-warning">
+                    </a>
+                    <a href="{{ path('retweeter_delete', { 'id': retweeter.id }) }}">
+                      <span class="glyphicon glyphicon-trash text-danger">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

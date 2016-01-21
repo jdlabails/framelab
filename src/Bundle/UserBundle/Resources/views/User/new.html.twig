@@ -1,0 +1,29 @@
+
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% form_theme form 'MainBundle:Form:fields.html.twig' %}
+
+{% block body -%}
+    <h1>Création d'un utilisateur</h1>
+        
+    <div class="well">
+        {{ form_start(form, {'attr' : {'class' : 'form-horizontal'}}) }}
+            {{ form_errors(form) }}
+
+            {{ form_row(form.username) }}
+            {{ form_row(form.plainPassword) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.roles) }}
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="btn btn-info" data-toggle="modal" data-target="#myModal">Plus d'informations sur les rôles</div>
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                </div>
+            </div>
+        {{ form_end(form) }}
+    </div>
+
+    {% include 'UserBundle:User:rappel_roles.html.twig' %}
+    
+{% endblock %}

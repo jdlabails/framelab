@@ -1,0 +1,9 @@
+parameters:
+    rate_manager.class: Framelab\Bundle\RateBundle\Services\RateManager
+
+services:
+    rate_manager:
+        class: %rate_manager.class%
+        arguments:
+            - @security.token_storage
+            - @doctrine.orm.default_entity_manager

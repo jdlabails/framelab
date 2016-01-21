@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %} {% endblock %} Framelab</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% block header %}{% endblock %}
+        {% block nav %}{% endblock %}
+        
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                {{ flashMessage }}
+              </div>
+
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Warning!</strong> {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+        <div class="container">
+        {% block body %}{% endblock %}
+        </div>
+        {% block footer %}{% endblock %}
+    </body>
+</html>

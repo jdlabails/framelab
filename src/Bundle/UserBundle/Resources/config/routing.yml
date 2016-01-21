@@ -1,0 +1,16 @@
+
+ldap_explorer:
+    path:     /ldap/explorer
+    defaults: { _controller: UserBundle:LDAP:explorer }
+        
+ldap_rechercher:
+    path:     /ldap/rechercher
+    defaults: { _controller: UserBundle:LDAP:rechercher }
+        
+ldap_add:
+    path:     /ldap/ajouter/{userName}
+    defaults: { _controller: UserBundle:LDAP:add }
+    
+atelier_user:
+    resource: "@UserBundle/Resources/config/routing/user.yml"
+    prefix:   /user

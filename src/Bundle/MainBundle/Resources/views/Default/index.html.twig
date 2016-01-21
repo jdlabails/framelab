@@ -1,0 +1,67 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block body -%}    
+    <div class="jumbotron welcome-block">
+        <h1 class="text-center">Welcome on my lab</h1>
+        <br>
+        <p class="lead">
+            This framelab serves me to test and experimented web devs.
+            
+        </p>
+        {% if is_granted('ROLE_DEV') %}
+            <p class="subnav text-center">
+                <a role="button" href="#features" class="btn btn-info">
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    Features
+                </a>
+                <a role="button" href="#wishes" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                    Soon
+                </a>
+            </p>
+        {% endif %}
+    </div>
+
+    {% if is_granted('ROLE_DEV') %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info" id="features">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            Features
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Classic bundles</li>
+                            <li class="list-group-item">Php Analyzer</li>
+                            <li class="list-group-item">Symfony 2.8</li>
+                            <li class="list-group-item">Rate bundle</li>
+                            <li class="list-group-item">PSR4</li>
+                            <li class="list-group-item">Fixtures with Alice</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-primary" id="wishes">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                            Coming soon
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Twitter bot</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
+
+{% endblock %}

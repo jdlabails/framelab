@@ -1,0 +1,3 @@
+RateBundle_rate:
+    resource: "@RateBundle/Resources/config/routing/rate.yml"
+    prefix:   /rate

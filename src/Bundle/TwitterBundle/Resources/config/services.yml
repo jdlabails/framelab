@@ -1,0 +1,13 @@
+parameters:
+    twitter.retweeter.class: Framelab\Bundle\TwitterBundle\Manager\RetweeterManager
+    twitter.connection.class: Framelab\Bundle\TwitterBundle\Manager\TwitterConnectionManager
+
+services:
+    twitter.connection:
+        class: %twitter.connection.class%
+        arguments: [%twitter_key%, %twitter_secret%, %twitter_accessToken%, %twitter_accessTokenSecret%]
+    twitter.retweeter:
+        class: %twitter.retweeter.class%
+        arguments: [@twitter.connection, @doctrine.orm.entity_manager, @logger]
+        tags:
+            - { name: monolog.logger, channel: retweeter }

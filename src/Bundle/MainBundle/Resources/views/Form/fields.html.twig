@@ -1,0 +1,62 @@
+{% block tel_widget %}
+    {% spaceless %}
+        {% set type = 'tel' %}
+        {{ block('form_widget_simple') }}
+    {% endspaceless %}
+{% endblock %}
+
+
+{% block form_row %}
+<div class="form-group">
+    {{ form_label(form, null, {'label_attr' : {'class':'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form, {'attr' : {'class':'form-control 2'}}) }}
+    </div>
+</div>
+{% endblock form_row %}
+
+
+{% block date_widget %}
+    {% spaceless %}
+        {% if widget == 'single_text' %}
+            <input type="text" class="form-control input-sm datepicker" placeholder="JJ/MM/AAAA" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+        {% endif %}
+    {% endspaceless %}
+{% endblock date_widget %}
+
+{% block checkbox_widget %}
+    {% spaceless %}
+        <div class="checkbox">
+            <label>
+                <input
+                    type="checkbox"
+                    {{ block('widget_attributes') }}
+                    {% if value is not empty %} value="{{ value }}" {% endif %}
+                    {% if checked %} checked="checked"{% endif %}
+                    >
+                {{ label|trans({}, translation_domain) }}
+            </label>
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+
+{% block choice_widget_expanded %}
+    {% spaceless %}
+        {% for child in form %}
+            {{ form_widget(child) }}
+        {% endfor %}
+    {% endspaceless %}
+{% endblock choice_widget_expanded %}
+
+
+
+{% block form_errors %}
+    {% if errors|length > 0 -%}
+        {% for error in errors -%}
+        <span class=help-block">
+            {{error.message}}
+        </span>
+        {% endfor %}
+    {% endif %}
+{% endblock form_errors %}

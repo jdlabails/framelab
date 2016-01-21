@@ -1,0 +1,47 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% form_theme edit_form 'MainBundle:Form:fields.html.twig' %}
+
+{% block body -%}
+    <h1>Modification d'un utilisateur</h1>
+    
+    <div class="well">
+        <table>
+            <caption>From LDAP</caption>
+            <tr>
+                <td style="width:100px">Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <td>DN</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+                
+    <div class="well">
+        {{ form_start(edit_form, {'attr' : {'class' : 'form-horizontal'}}) }}
+            {{ form_errors(edit_form) }}
+
+            {{ form_row(edit_form.roles) }}
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="btn btn-info" data-toggle="modal" data-target="#myModal">Plus d'informations sur les rôles</div>
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                </div>
+            </div>
+        {{ form_end(edit_form) }}
+    </div>
+
+    {% include 'UserBundle:User:rappel_roles.html.twig' %}
+    
+{% endblock %}

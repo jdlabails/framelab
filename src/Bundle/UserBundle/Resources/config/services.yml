@@ -1,0 +1,7 @@
+parameters:
+    user.ldap.ldap_manager.class: Framelab\Bundle\UserBundle\Ldap\LdapManager
+
+services:
+    user.ldap.ldap_manager:
+        class: %user.ldap.ldap_manager.class%
+        arguments: [@fr3d_ldap.ldap_driver, @fr3d_ldap.user_manager, %fr3d_ldap.ldap_manager.parameters%]

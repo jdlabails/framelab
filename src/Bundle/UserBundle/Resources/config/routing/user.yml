@@ -1,0 +1,29 @@
+atelier_user_index:
+    path:     /
+    defaults: { _controller: "UserBundle:User:index" }
+
+atelier_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "UserBundle:User:show" }
+
+atelier_user_new:
+    path:     /new
+    defaults: { _controller: "UserBundle:User:new" }
+
+atelier_user_create:
+    path:     /create
+    defaults: { _controller: "UserBundle:User:create" }
+    requirements: { method: post|put }
+    
+atelier_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UserBundle:User:edit" }
+
+atelier_user_update:
+    path:     /{id}/update
+    defaults: { _controller: "UserBundle:User:update" }
+    requirements: { method: post|put }
+
+atelier_user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UserBundle:User:delete" }
