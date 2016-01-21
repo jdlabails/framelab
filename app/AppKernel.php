@@ -21,9 +21,6 @@ class AppKernel extends Kernel
             // gestion des users
             new FR3D\LdapBundle\FR3DLdapBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            //pour twitter
-            //new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
-            new M6Web\Bundle\GuzzleHttpBundle\M6WebGuzzleHttpBundle(),
             // pour les fixtures
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             // our bundles
@@ -34,13 +31,13 @@ class AppKernel extends Kernel
             new Framelab\Bundle\PostBundle\PostBundle(),
             new Framelab\Bundle\DocumentBundle\DocumentBundle(),
             new Framelab\Bundle\RateBundle\RateBundle(),
-            new JD\PhpProjectAnalyzerBundle\JDPhpProjectAnalyzerBundle(),
         ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            //$bundles[] = new JD\PhpProjectAnalyzerBundle\JDPhpProjectAnalyzerBundle();
         }
 
         return $bundles;

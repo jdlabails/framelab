@@ -29,7 +29,6 @@
         
         "fr3d/ldap-bundle": "dev-master",
         "hwi/oauth-bundle": "^0.4.0",
-        "m6web/guzzle-http-bundle": "^1.4",
         
         "abraham/twitteroauth": "^0.6.2",
         "symfony/var-dumper": "^3.0"
