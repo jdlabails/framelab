@@ -226,5 +226,4 @@ class PostController extends Controller
             ->getForm()
         ;
     }
-
 }

@@ -41,11 +41,14 @@ class RetweeterManager
     /**
      *
      * @param TwitterConnectionManager $twitterConnection
-     * @param EntityManager $entityManager
-     * @param Logger $logger
+     * @param EntityManager            $entityManager
+     * @param Logger                   $logger
      */
-    public function __construct(TwitterConnectionManager $twitterConnection, EntityManager $entityManager, Logger $logger)
-    {
+    public function __construct(
+        TwitterConnectionManager $twitterConnection,
+        EntityManager $entityManager,
+        Logger $logger
+    ) {
         $this->twitterConnection = $twitterConnection;
         $this->entityManager = $entityManager;
         $this->logger = $logger;
@@ -92,11 +95,11 @@ class RetweeterManager
             return false;
         }
 
-        foreach($statuses as $tweet) {
+        foreach ($statuses as $tweet) {
             try {
                 $retweet = $this->retweet($tweet);
             } catch (\Exception $ex) {
-                $this->explaination = $retweeter->getName(). ' tries to re-retweet... oh lala';
+                $this->explaination = $retweeter->getName().' tries to re-retweet... oh lala';
                 $this->logger->warning($this->explaination);
                 continue;
             }
@@ -115,7 +118,7 @@ class RetweeterManager
      */
     public function shallI(Entity\Retweeter $retweeter)
     {
-        return rand(0,100)/100 < $this->calculateProbabilityToRetweet($retweeter);
+        return rand(0, 100)/100 < $this->calculateProbabilityToRetweet($retweeter);
     }
 
     /**
@@ -132,7 +135,7 @@ class RetweeterManager
                 ->getConnection()
                 ->post("statuses/retweet", ['id' => $tweet->id]);
 
-        if (isset ($retweet->errors)) {
+        if (isset($retweet->errors)) {
             throw new \Exception('Deja retweeté');
         }
 
@@ -143,7 +146,7 @@ class RetweeterManager
      * Notifie le retweet
      *
      * @param \Framelab\Bundle\TwitterBundle\Entity\Retweeter $retweeter
-     * @param type $retweet
+     * @param type                                            $retweet
      */
     public function statThis(Entity\Retweeter $retweeter, $retweet)
     {
@@ -181,7 +184,7 @@ class RetweeterManager
 
         // temps passé depuis le dernier tweet
         $spentTime = date_diff(new \DateTime, $retweeter->getLastLaunch());
-        $spentTime = $spentTime->format('%d') * 60*24 + $spentTime->format('%h')*60 + $spentTime->format('%i') ;
+        $spentTime = $spentTime->format('%d')* 60*24 + $spentTime->format('%h')*60 + $spentTime->format('%i');
 
         // on veut une proba de 0.5 si cela fait 5h qu'on a pas tweeter et que la periode est aussi de 5h
         $proba = 0.5 * $spentTime / $period;
@@ -196,5 +199,4 @@ class RetweeterManager
 
         return $proba;
     }
-
 }

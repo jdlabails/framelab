@@ -41,13 +41,13 @@ class RetweeterController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $retweeters = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('TwitterBundle:Retweeter')
+            ->findAll();
 
-        $retweeters = $em->getRepository('TwitterBundle:Retweeter')->findAll();
-
-        return $this->render('TwitterBundle:Retweeter:index.html.twig', array(
-                'retweeters' => $retweeters,
-        ));
+        return $this->render('TwitterBundle:Retweeter:index.html.twig', ['retweeters' => $retweeters]);
     }
 
     /**
@@ -59,11 +59,15 @@ class RetweeterController extends Controller
     public function newAction(Request $request)
     {
         $retweeter = new Retweeter();
-        $form = $this->createForm('Framelab\Bundle\TwitterBundle\Form\RetweeterType', $retweeter, [
-            'action' => $this->generateUrl('retweeter_new'),
-            'method' => 'POST',
-        ]);
-        $form->add('submit', 'submit', array('label' => 'Create', 'attr' => array('class' => 'btn btn-success')));
+        $form = $this->createForm(
+            'Framelab\Bundle\TwitterBundle\Form\RetweeterType',
+            $retweeter,
+            [
+                'action' => $this->generateUrl('retweeter_new'),
+                'method' => 'POST',
+            ]
+        );
+        $form->add('submit', 'submit', ['label' => 'Create', 'attr' => ['class' => 'btn btn-success']]);
 
         $form->handleRequest($request);
 
@@ -75,10 +79,13 @@ class RetweeterController extends Controller
             return $this->redirectToRoute('retweeter_index');
         }
 
-        return $this->render('TwitterBundle:Retweeter:new.html.twig', array(
+        return $this->render(
+            'TwitterBundle:Retweeter:new.html.twig',
+            [
                 'retweeter' => $retweeter,
                 'form' => $form->createView(),
-        ));
+            ]
+        );
     }
 
     /**
@@ -101,11 +108,14 @@ class RetweeterController extends Controller
             return $this->redirectToRoute('retweeter_index');
         }
 
-        return $this->render('TwitterBundle:Retweeter:edit.html.twig', array(
+        return $this->render(
+            'TwitterBundle:Retweeter:edit.html.twig',
+            [
                 'retweeter' => $retweeter,
                 'edit_form' => $editForm->createView(),
                 'delete_form' => $deleteForm->createView(),
-        ));
+            ]
+        );
     }
 
     /**
@@ -140,8 +150,6 @@ class RetweeterController extends Controller
         return $this->createFormBuilder()
                 ->setAction($this->generateUrl('retweeter_delete', array('id' => $retweeter->getId())))
                 ->setMethod('DELETE')
-                ->getForm()
-        ;
+                ->getForm();
     }
-
 }

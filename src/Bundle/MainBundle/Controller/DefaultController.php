@@ -11,11 +11,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class DefaultController extends Controller
 {
-
+    /**
+     * Welcome page
+     *
+     * @return type
+     */
     public function indexAction()
     {
-
         return $this->render('MainBundle:Default:index.html.twig');
     }
-
 }

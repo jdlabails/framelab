@@ -25,7 +25,10 @@ class User extends BaseUser implements LdapUserInterface
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Framelab\Bundle\DocumentBundle\Entity\Document", mappedBy="owner", cascade={"remove"})
+     * @ORM\OneToMany(
+     * targetEntity="Framelab\Bundle\DocumentBundle\Entity\Document",
+     * mappedBy="owner",
+     * cascade={"remove"})
      * @ORM\OrderBy({"date" = "desc"})
      */
     private $documents;

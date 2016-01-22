@@ -7,7 +7,6 @@ use Framelab\Bundle\UserBundle\Entity\User;
 
 class LDAPController extends Controller
 {
-
     /**
      * Affiche l'interface de recherche  sur LDAP
      * @return type
@@ -95,13 +94,11 @@ class LDAPController extends Controller
         ldap_bind($cnx, 'cn=read-only-admin,dc=example,dc=com', 'password');  // authentication on two BDB
 
         $search = ldap_search(array($cnx, $cnx, $cnx), $basedn, $filter);  // search
-// result
+
         for ($i = 0; $i < count($search); $i++) {
             var_dump(ldap_get_entries($cnx, $search[$i]));
             print "<br>";
         }
-
-
 
         $ldap_host = $this->container->getParameter('ldap_host');
         $base_dn = $this->container->getParameter('ldap_baseDn');

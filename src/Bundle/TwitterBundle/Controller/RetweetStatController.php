@@ -32,9 +32,13 @@ class RetweetStatController extends Controller
             $retweeters[$retweeter->getId()] = $retweeter->getName();
         }
 
-        return $this->render('TwitterBundle:Retweetstat:index.html.twig', array(
-                'retweetStats' => $retweetStats, 'retweeters' => $retweeters
-        ));
+        return $this->render(
+            'TwitterBundle:Retweetstat:index.html.twig',
+            [
+                'retweetStats' => $retweetStats,
+                'retweeters' => $retweeters
+            ]
+        );
     }
 
     /**
@@ -45,12 +49,12 @@ class RetweetStatController extends Controller
      */
     public function showAction(RetweetStat $retweetStat)
     {
-        $deleteForm = $this->createDeleteForm($retweetStat);
-
-        return $this->render('TwitterBundle:Retweetstat:show.html.twig', array(
+        return $this->render(
+            'TwitterBundle:Retweetstat:show.html.twig',
+            [
                 'retweetStat' => $retweetStat,
-                'delete_form' => $deleteForm->createView(),
-        ));
+                'delete_form' => $this->createDeleteForm($retweetStat)->createView(),
+            ]
+        );
     }
-
 }

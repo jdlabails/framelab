@@ -28,11 +28,14 @@ class RateController extends Controller
     {
         $isLike = $this->get('rate_manager')->isLikedByCurrentUser($type.'_'.$id);
 
-        return $this->render('RateBundle:Rate:likeButton.html.twig', array(
+        return $this->render(
+            'RateBundle:Rate:likeButton.html.twig',
+            [
             'type'   => $type,
             'id'     => $id,
             'isLike' => $isLike
-        ));
+            ]
+        );
     }
 
     /**
@@ -42,10 +45,13 @@ class RateController extends Controller
     {
         $nb = $this->get('rate_manager')->getNbLike($type.'_'.$id);
 
-        return $this->render('RateBundle:Rate:nbLike.html.twig', array(
-            'type'  => $type,
-            'id'    => $id,
-            'nb'    => $nb
-        ));
+        return $this->render(
+            'RateBundle:Rate:nbLike.html.twig',
+            [
+                'type'  => $type,
+                'id'    => $id,
+                'nb'    => $nb
+            ]
+        );
     }
 }

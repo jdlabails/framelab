@@ -33,10 +33,13 @@ class UserController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('UserBundle:User:show.html.twig', array(
-            'entity'      => $user,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render(
+            'UserBundle:User:show.html.twig',
+            [
+                'entity'      => $user,
+                'delete_form' => $deleteForm->createView(),
+            ]
+        );
     }
 
     /**
@@ -49,10 +52,13 @@ class UserController extends Controller
 
         $form = $this->createNewForm($user);
 
-        return $this->render('UserBundle:User:new.html.twig', array(
-            'user'      => $user,
-            'form'  => $form->createView()
-        ));
+        return $this->render(
+            'UserBundle:User:new.html.twig',
+            [
+                'user' => $user,
+                'form' => $form->createView()
+            ]
+        );
     }
 
     /**
@@ -64,12 +70,14 @@ class UserController extends Controller
     */
     private function createNewForm(User $entity)
     {
-        $form = $this->createForm(new UserType($this->container->getParameter('security.role_hierarchy.roles')), $entity, array(
-            'action' => $this->generateUrl('atelier_user_create'),
-            'method' => 'POST',
-        ));
-
-        return $form;
+        return $this->createForm(
+            new UserType($this->container->getParameter('security.role_hierarchy.roles')),
+            $entity,
+            [
+                'action' => $this->generateUrl('atelier_user_create'),
+                'method' => 'POST',
+            ]
+        );
     }
 
     /**
@@ -87,10 +95,13 @@ class UserController extends Controller
 
         $editForm = $this->createEditForm($user);
 
-        return $this->render('UserBundle:User:edit.html.twig', array(
-            'user'      => $user,
-            'edit_form'   => $editForm->createView()
-        ));
+        return $this->render(
+            'UserBundle:User:edit.html.twig',
+            [
+                'user'      => $user,
+                'edit_form'   => $editForm->createView(),
+            ]
+        );
     }
 
     /**
@@ -114,10 +125,13 @@ class UserController extends Controller
             return $this->redirect($this->generateUrl('atelier_user_index'));
         }
 
-        return $this->render('UserBundle:User:new.html.twig', array(
-            'entity' => $user,
-            'form'   => $form->createView()
-        ));
+        return $this->render(
+            'UserBundle:User:new.html.twig',
+            [
+                'entity' => $user,
+                'form'   => $form->createView(),
+            ]
+        );
     }
 
     /**
@@ -129,12 +143,14 @@ class UserController extends Controller
     */
     private function createEditForm(User $entity)
     {
-        $form = $this->createForm(new UserType($this->container->getParameter('security.role_hierarchy.roles')), $entity, array(
-            'action' => $this->generateUrl('atelier_user_update', array('id' => $entity->getId())),
-            'method' => 'PUT',
-        ));
-
-        return $form;
+        return $this->createForm(
+            new UserType($this->container->getParameter('security.role_hierarchy.roles')),
+            $entity,
+            [
+                'action' => $this->generateUrl('atelier_user_update', array('id' => $entity->getId())),
+                'method' => 'PUT',
+            ]
+        );
     }
 
     /**
@@ -159,10 +175,13 @@ class UserController extends Controller
             return $this->redirect($this->generateUrl('atelier_user_edit', array('id' => $id)));
         }
 
-        return $this->render('UserBundle:User:edit.html.twig', array(
-            'entity'      => $user,
-            'edit_form'   => $editForm->createView()
-        ));
+        return $this->render(
+            'UserBundle:User:edit.html.twig',
+            [
+                'entity'      => $user,
+                'edit_form'   => $editForm->createView(),
+            ]
+        );
     }
     /**
      * Deletes a User entity.

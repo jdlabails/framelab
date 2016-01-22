@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Framelab\Bundle\RateBundle\Services;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
@@ -66,12 +65,14 @@ class RateManager
     public function isLikedByCurrentUser($ratableId)
     {
         $rate = $this
-                ->entityManager
-                ->getRepository('RateBundle:Rate')
-                ->findOneBy([
+            ->entityManager
+            ->getRepository('RateBundle:Rate')
+            ->findOneBy(
+                [
                     'ratable' => $ratableId,
                     'user' => $this->getCurrentUser()
-                ]);
+                ]
+            );
 
         return !empty($rate);
     }
@@ -84,11 +85,9 @@ class RateManager
     public function getNbLike($ratableId)
     {
         $rates = $this
-                ->entityManager
-                ->getRepository('RateBundle:Rate')
-                ->findBy([
-                    'ratable' => $ratableId
-                ]);
+            ->entityManager
+            ->getRepository('RateBundle:Rate')
+            ->findBy(['ratable' => $ratableId]);
 
         return count($rates);
     }

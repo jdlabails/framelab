@@ -22,5 +22,4 @@ class TwitterConnectionManager
     {
         return $this->connection;
     }
-
 }
