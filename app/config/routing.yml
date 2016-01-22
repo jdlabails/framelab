@@ -6,7 +6,6 @@ twitter_retweeter:
     resource: "@TwitterBundle/Controller/RetweeterController.php"
     type:     annotation
 
-
 jd_php_project_analyzer:
     resource: "@JDPhpProjectAnalyzerBundle/Resources/config/routing.yml"
     prefix:   /
@@ -54,14 +53,3 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
-
-#hwi_oauth_redirect:
-#    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-#    prefix:   /connect
-#
-#hwi_oauth_login:
-#    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-#    prefix:   /login
-#    
-#twitter_login:
-#    path: /login/check-twitter
