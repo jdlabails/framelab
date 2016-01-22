@@ -17,11 +17,12 @@ before_script:
     - php composer.phar install --dev
     - pyrus install pear/PHP_CodeSniffer
     - phpenv rehash
-    - php app/console doctrine:schema:update --force
+    - php app/console doctrine:schema:update --force    
+    - php app/console doctrine:fixture:load --no-interaction
 
 script: 
-    - phpunit --coverage-text -c app/phpunit.xml.dist 
-    - phpcs --extensions=php --standard=PSR2 src
+    - phpunit --coverage-text -c app/phpunit.xml.dist --testsuite 'Complete' 
+    - phpcs --extensions=php --standard=PSR2 src/Bundle
 
 notifications:
   email:

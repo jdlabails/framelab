@@ -75,6 +75,11 @@ class RetweeterManagerTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        return new RetweeterManager($twitterConnectionMock, $entityManager);
+        $logger = $this
+            ->getMockBuilder(\Monolog\Logger::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        return new RetweeterManager($twitterConnectionMock, $entityManager, $logger);
     }
 }

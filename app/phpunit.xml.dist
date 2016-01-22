@@ -8,16 +8,14 @@
          bootstrap="bootstrap.php.cache"
 >
     <testsuites>
-        <testsuite name="TestSuite">
-            <directory>../src/*/*Bundle/Tests</directory>
-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
+        <testsuite name="Complete">
+            <directory>../src/Bundle/*Bundle/Tests</directory>
         </testsuite>
         
         <testsuite name="Person">
             <directory>../src/Bundle/MainBundle/Tests</directory>
             <directory>../src/Bundle/PersonBundle/Tests</directory>
         </testsuite>
-        
         
         <testsuite name="Retweeter">
             <directory>../src/Bundle/TwitterBundle/Tests</directory>

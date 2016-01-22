@@ -30,6 +30,8 @@ monolog:
 
 assetic:
     use_controller: true
+    bundle:
+        - JDPhpProjectAnalyzerBundle
 
 jd_php_project_analyzer:
     title:          Frame Lab

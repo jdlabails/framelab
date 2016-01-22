@@ -2,16 +2,13 @@
 
 namespace Framelab\Bundle\UserBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Framelab\MainBundle\Tests\Controller\MainControllerTest;
 
-class DefaultControllerTest extends WebTestCase
+class DefaultControllerTest extends MainControllerTest
 {
     public function testIndex()
     {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/hello/Fabien');
-
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
+        $this->goAndCheckPage200('/user/new');
+        $this->goAndCheckPage200('/user/');
     }
 }

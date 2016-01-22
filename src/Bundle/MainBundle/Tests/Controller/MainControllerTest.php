@@ -17,8 +17,8 @@ abstract class MainControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/login');
         $form = $crawler->selectButton('_submit')->form(
             [
-                '_username' => 'jd',
-                '_password' => 'jd',
+                '_username' => 'admin',
+                '_password' => 'admin123',
             ]
         );
         $this->client->submit($form);

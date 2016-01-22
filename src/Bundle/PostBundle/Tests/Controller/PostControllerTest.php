@@ -2,26 +2,13 @@
 
 namespace Framelab\Bundle\PostBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Framelab\MainBundle\Tests\Controller\MainControllerTest;
 
-class PostControllerTest extends WebTestCase
+class PostControllerTest extends MainControllerTest
 {
-
     public function testCompleteScenario()
     {
-        // Create a new client to browse the application
-        $client = static::createClient();
-
-        // Create a new entry in the database
-        $crawler = $client->request('GET', '/article/');
-        $this->assertEquals(
-            200,
-            $client->getResponse()->getStatusCode(),
-            "Unexpected HTTP status code for GET /article/"
-        );
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
-
-        // Check the entity has been delete on the list
-        $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
+        $this->goAndCheckPage200('/article/');
+        $this->goAndCheckPage200('/article/new');
     }
 }
