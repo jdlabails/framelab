@@ -36,7 +36,7 @@
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^2.7",
-        "jdlabails/php-project-analyzer-bundle ": "^0.7"
+        "jdlabails/php-project-analyzer-bundle": "^0.9"
     },
     "scripts": {
         "post-install-cmd": [
