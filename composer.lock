@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b5ea51e5c586679709da71b8d555627d",
-    "content-hash": "6220a128d7a7664fa19343fe239eae92",
+    "hash": "48520c5af1fdf64f4d4933cf0ca35c63",
+    "content-hash": "6b2dc4f1c4b86508e82cd63537066412",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3071,21 +3071,21 @@
     "packages-dev": [
         {
             "name": "jdlabails/php-project-analyzer-bundle",
-            "version": "0.9",
+            "version": "0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdlabails/PhpProjectAnalyzerBundle.git",
-                "reference": "9c5be4e005ee80b5d608e6426d9f0117045883b9"
+                "reference": "abf9fd74e4d18866164e25d76ac1de27a749fd7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/9c5be4e005ee80b5d608e6426d9f0117045883b9",
-                "reference": "9c5be4e005ee80b5d608e6426d9f0117045883b9",
+                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/abf9fd74e4d18866164e25d76ac1de27a749fd7f",
+                "reference": "abf9fd74e4d18866164e25d76ac1de27a749fd7f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.7",
+                "php": ">=5.4",
+                "symfony/framework-bundle": "~2.8",
                 "symfony/twig-bundle": "~2.3"
             },
             "type": "symfony-bundle",
@@ -3114,7 +3114,7 @@
             "keywords": [
                 "Php Project Analyzer"
             ],
-            "time": "2016-01-23 00:02:25"
+            "time": "2016-01-24 16:37:20"
         },
         {
             "name": "sensio/generator-bundle",
@@ -3233,7 +3233,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.9"
+        "php": ">=5.4"
     },
     "platform-dev": []
 }

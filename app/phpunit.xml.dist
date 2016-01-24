@@ -9,7 +9,12 @@
 >
     <testsuites>
         <testsuite name="Complete">
-            <directory>../src/Bundle/*Bundle/Tests</directory>
+            <directory>../src/Bundle/MainBundle/Tests</directory>
+            <directory>../src/Bundle/PersonBundle/Tests</directory>
+            <directory>../src/Bundle/DocumentBundle/Tests</directory>
+            <directory>../src/Bundle/UserBundle/Tests</directory>
+            <directory>../src/Bundle/PostBundle/Tests</directory>            
+            <directory>../src/Bundle/TwitterBundle/Tests</directory>
         </testsuite>
         
         <testsuite name="Person">

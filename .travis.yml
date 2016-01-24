@@ -3,7 +3,6 @@ language: php
 php:
     - 5.5
     - 5.6
-    - 7
 service:
     -mysql
     
@@ -21,7 +20,7 @@ before_script:
     - php app/console doctrine:fixture:load --no-interaction
 
 script: 
-    - phpunit --coverage-text -c app/phpunit.xml.dist --testsuite 'Complete' 
+    - phpunit -c app/phpunit.xml.dist --testsuite 'Complete' 
     - phpcs --extensions=php --standard=PSR2 src/Bundle
 
 notifications:

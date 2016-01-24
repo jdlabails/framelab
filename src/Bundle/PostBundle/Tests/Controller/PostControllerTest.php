@@ -1,6 +1,6 @@
 <?php
 
-namespace Framelab\Bundle\PostBundle\Tests\Controller;
+namespace Framelab\PostBundle\Tests\Controller;
 
 use Framelab\MainBundle\Tests\Controller\MainControllerTest;
 

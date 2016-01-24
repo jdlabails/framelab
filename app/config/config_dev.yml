@@ -35,31 +35,31 @@ assetic:
 
 jd_php_project_analyzer:
     title:          Frame Lab
-    description:    
+    description:    JD's FrameLab
 
     gitRepositoryURL: https://github.com/jdlabails/PhpProjectAnalyzerBundle
 
-    # chemin d'analyse
+    # directory to analyze
     srcPath : /home/jd/Dev/framelab/src/Bundle
     
-    # métrique quantitative
+    # quantitative metric
     count : true
 
-    # métrique qualité copy-paste
+    # quality metric : copy-paste
     cpd : true
 
-    # métrique qualité code sniffer
+    # quality metric : code sniffer
     cs :
         enable: true
         standard: PSR2
 
-    # métrique qualité php depend
+    # quality metric : php depend
     depend : false
 
-    # métrique qualité php loc
+    # quality metric : phploc
     loc : true
 
-    # métrique qualité mess detector
+    # quality metric : mess detector
     md :
         enable: true
         rules:
@@ -70,14 +70,14 @@ jd_php_project_analyzer:
             naming: true
             unusedcode: true
 
-    # possiblité de généré la phpdoc
+    # generate phpdoc
     docs : true
 
-    # tests unitaires et fonctionnels
+    # testing
     test :
         enable: true
         lib : phpunit       # phpunit || atoum
-        phpunitTestSuite : Retweeter
+        phpunitTestSuite : Complete
         phpunitTestConfig: /home/jd/Dev/framelab/app/phpunit.xml.dist
 #        atoumPath : /home/smith/www/projectX/vendor/bin/atoum
 #        atoumTestDir : /absolute/path/to/your/test/dir
