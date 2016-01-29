@@ -7,16 +7,17 @@ php composer.phar install --prefer-source
 php app/console doctrine:schema:update --force
 php app/console assets:install
 php app/console assetic:dump
+php app/console ppa:init
 ```
 
 ## Fake data loading
 
 ```sh
-php app/console doctrine:fixtures:load
+php app/console hautelook:doctrine:fixtures:load
 ```
 
 ## Connexion
 
-Given fixtures loaded
+If  fixtures are loaded
 
 admin/admin123

@@ -1,0 +1,14 @@
+                
+Framelab\Bundle\UserBundle\Entity\User:
+    user{1..20}:
+        username: <username()>
+        enabled: <randomNumber(1)>
+        email: <email()>
+        plainpassword: 123
+    admin:
+        username: admin
+        enabled: 1
+        email: admin@admin.fr
+        plainpassword: admin123
+        roles: [ROLE_ADMIN]
+              

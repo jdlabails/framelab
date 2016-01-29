@@ -48,7 +48,7 @@ class RetweeterManagerTest extends \PHPUnit_Framework_TestCase
 
         $retweeterManager = $this->getBaseInstance();
 
-        $this->assertEquals($res, round($retweeterManager->calculateProbabilityToRetweet($retweeter), 2));
+        $this->assertEquals($res, $retweeterManager->calculateProbabilityToRetweet($retweeter));
     }
 
     public function calculateProbabilityToRetweetProvider()

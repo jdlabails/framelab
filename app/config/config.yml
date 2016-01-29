@@ -91,3 +91,7 @@ fr3d_ldap:
     user:
         baseDn:     OU=Utilisateurs, DC=exchange, DC=po, DC=fr     # %ldap_dn%
 
+# tmp fix for sf3
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine

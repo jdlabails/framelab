@@ -1,0 +1,9 @@
+
+Framelab\Bundle\TwitterBundle\Entity\Retweeter:
+    retweeter:
+        name: robot
+        query: robot -portrait
+        frequencyPerDay: 3
+        actif: true
+        nbMonthKeeping: 2
+        lastLaunch: <datetime()>

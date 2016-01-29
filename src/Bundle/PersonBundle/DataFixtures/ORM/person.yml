@@ -1,0 +1,10 @@
+
+Framelab\Bundle\PersonBundle\Entity\Personne:
+    personne{1..2000}:
+        prenom: <firstname()>
+        nom: <lastname()>
+        dateNaissance: <dateTimeBetween('-50 years', '-20 years')>
+        email: <email()>
+        tel: <phoneNumber()>
+        service: @service*
+        lieuTravail: 50%? <text(10)>

@@ -18,11 +18,11 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
             // gestion des users
             new FR3D\LdapBundle\FR3DLdapBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            // pour les fixtures
-            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+
             // our bundles
             new Framelab\Bundle\PersonBundle\PersonBundle(),
             new Framelab\Bundle\TwitterBundle\TwitterBundle(),
@@ -33,11 +33,14 @@ class AppKernel extends Kernel
             new Framelab\Bundle\RateBundle\RateBundle(),
         ];
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+        if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new JD\PhpProjectAnalyzerBundle\JDPhpProjectAnalyzerBundle();
+            // pour les fixtures
+            //$bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
         }
 
         return $bundles;
@@ -47,5 +50,4 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
     }
-
 }

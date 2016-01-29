@@ -1,0 +1,8 @@
+
+Framelab\Bundle\PostBundle\Entity\Post:
+    post{1..20}:
+        title: <text(20)>
+        content: <realText(255)>
+        createdDate: <dateTimeBetween('-200 days', 'now')>
+        updatedDate: <dateTimeBetween($createdDate, 'now')>
+        author: jd

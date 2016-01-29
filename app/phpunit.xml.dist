@@ -23,6 +23,7 @@
         </testsuite>
         
         <testsuite name="Retweeter">
+            <directory>../src/Bundle/MainBundle/Tests</directory>
             <directory>../src/Bundle/TwitterBundle/Tests</directory>
         </testsuite>
     </testsuites>
