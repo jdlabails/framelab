@@ -3030,16 +3030,16 @@
         },
         {
             "name": "jdlabails/php-project-analyzer-bundle",
-            "version": "0.12",
+            "version": "v0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdlabails/PhpProjectAnalyzerBundle.git",
-                "reference": "67372b63d2ced142f0363d765b619332130c8a2e"
+                "reference": "3f464ae2ba12c7bbb29793d45dc70266c062aebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/67372b63d2ced142f0363d765b619332130c8a2e",
-                "reference": "67372b63d2ced142f0363d765b619332130c8a2e",
+                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/3f464ae2ba12c7bbb29793d45dc70266c062aebd",
+                "reference": "3f464ae2ba12c7bbb29793d45dc70266c062aebd",
                 "shasum": ""
             },
             "require": {
@@ -3073,7 +3073,7 @@
             "keywords": [
                 "Php Project Analyzer"
             ],
-            "time": "2016-01-24 17:38:11"
+            "time": "2016-01-30 00:23:26"
         },
         {
             "name": "nelmio/alice",

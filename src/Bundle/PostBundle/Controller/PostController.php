@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Framelab\Bundle\PostBundle\Entity\Post;
 use Framelab\Bundle\PostBundle\Form\PostType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Post controller.
@@ -65,12 +66,12 @@ class PostController extends Controller
      */
     private function createCreateForm(Post $entity)
     {
-        $form = $this->createForm(new PostType(), $entity, array(
+        $form = $this->createForm(PostType::class, $entity, array(
             'action' => $this->generateUrl('article_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -145,12 +146,12 @@ class PostController extends Controller
     */
     private function createEditForm(Post $entity)
     {
-        $form = $this->createForm(new PostType(), $entity, array(
+        $form = $this->createForm(PostType::class, $entity, array(
             'action' => $this->generateUrl('article_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }

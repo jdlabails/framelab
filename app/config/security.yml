@@ -48,7 +48,7 @@ security:
 #            fr3d_ldap:  ~
             form_login:
                 provider: chain_provider
-                csrf_provider: security.csrf.token_manager
+                csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: true
                 default_target_path: /
                 #login_path: /no_access # créer le controller pour renvoyer un json no access

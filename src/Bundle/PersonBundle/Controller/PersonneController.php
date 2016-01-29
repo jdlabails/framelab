@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Framelab\Bundle\PersonBundle\Entity\Personne;
 use Framelab\Bundle\PersonBundle\Form\PersonneType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Personne controller.
@@ -61,12 +62,16 @@ class PersonneController extends Controller
      */
     private function createCreateForm(Personne $entity)
     {
-        $form = $this->createForm(new PersonneType(), $entity, array(
+        $form = $this->createForm(PersonneType::class, $entity, array(
             'action' => $this->generateUrl('personne_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create', 'attr' => array('class' => 'btn btn-success')));
+        $form->add(
+            'submit',
+            SubmitType::class,
+            array('label' => 'Create', 'attr' => array('class' => 'btn btn-success'))
+        );
 
         return $form;
     }
@@ -136,12 +141,12 @@ class PersonneController extends Controller
     */
     private function createEditForm(Personne $entity)
     {
-        $form = $this->createForm(new PersonneType(), $entity, array(
+        $form = $this->createForm(PersonneType::class, $entity, array(
             'action' => $this->generateUrl('personne_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }
