@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Framelab\Bundle\UserBundle\Entity\User;
 use Framelab\Bundle\UserBundle\Form\Type\UserType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type;
 
 class UserController extends Controller
 {
@@ -79,7 +79,7 @@ class UserController extends Controller
             ]
         )->add(
             'roles',
-            ChoiceType::class,
+            Type\ChoiceType::class,
             array(
                 'choices'   => $this->refactorRoles($this->container->getParameter('security.role_hierarchy.roles')),
                 'choices_as_values' => true,
