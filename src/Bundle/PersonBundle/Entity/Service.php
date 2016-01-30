@@ -35,11 +35,6 @@ class Service
      */
     protected $personnes;
 
-    public function __construct()
-    {
-        //$this->personnes = new \ArrayCollection();
-    }
-
     public function __toString()
     {
         return $this->nom;

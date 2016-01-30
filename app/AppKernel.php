@@ -39,7 +39,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new JD\PhpProjectAnalyzerBundle\JDPhpProjectAnalyzerBundle();
             // pour les fixtures
-            //$bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
             $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
         }
 

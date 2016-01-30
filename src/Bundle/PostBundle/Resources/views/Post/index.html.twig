@@ -53,7 +53,7 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        {# FIXME replace by FosJsRouting #}
+        {# TODO replace by FosJsRouting #}
         var rateLikeUrl = {{ path('rate_like')|json_encode|raw }};
     </script>
     {% javascripts 'bundles/rate/js/rate.js' %}
