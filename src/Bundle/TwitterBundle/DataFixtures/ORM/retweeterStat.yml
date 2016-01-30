@@ -3,7 +3,7 @@ Framelab\Bundle\TwitterBundle\Entity\RetweetStat:
     RetweetStat{1..2000}:
         idTweet: <numberBetween($min = 1000, $max = 9000)>
         idRetweet: <numberBetween($min = 1000, $max = 9000)>
-        idRetweeter: <numberBetween($min = 1000, $max = 9000)>
+        idRetweeter: 1
         datetime: <datetime()>
         text: <text()>
         idUser: <numberBetween($min = 1000, $max = 9000)>
