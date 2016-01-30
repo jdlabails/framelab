@@ -4,9 +4,8 @@ namespace Framelab\Bundle\PersonBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Framelab\Bundle\PersonBundle\Entity\Personne;
-use Framelab\Bundle\PersonBundle\Form\PersonneType;
+use Framelab\Bundle\PersonBundle\Form\Type\PersonneType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**

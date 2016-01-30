@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Framelab\Bundle\PersonBundle\Entity\Service;
-use Framelab\Bundle\PersonBundle\Form\ServiceType;
+use Framelab\Bundle\PersonBundle\Form\Type\ServiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**

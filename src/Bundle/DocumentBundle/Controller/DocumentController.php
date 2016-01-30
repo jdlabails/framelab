@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Framelab\Bundle\DocumentBundle\Entity\Document;
-use Framelab\Bundle\DocumentBundle\Form\DocumentType;
+use Framelab\Bundle\DocumentBundle\Form\Type\DocumentType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**

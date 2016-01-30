@@ -1,5 +1,5 @@
 <?php
-namespace Framelab\Bundle\PersonBundle\Form;
+namespace Framelab\Bundle\PersonBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

@@ -60,7 +60,7 @@ class RetweeterController extends Controller
     {
         $retweeter = new Retweeter();
         $form = $this->createForm(
-            'Framelab\Bundle\TwitterBundle\Form\RetweeterType',
+            'Framelab\Bundle\TwitterBundle\Form\Type\RetweeterType',
             $retweeter,
             [
                 'action' => $this->generateUrl('retweeter_new'),
@@ -97,7 +97,7 @@ class RetweeterController extends Controller
     public function editAction(Request $request, Retweeter $retweeter)
     {
         $deleteForm = $this->createDeleteForm($retweeter);
-        $editForm = $this->createForm('Framelab\Bundle\TwitterBundle\Form\RetweeterType', $retweeter);
+        $editForm = $this->createForm('Framelab\Bundle\TwitterBundle\Form\Type\RetweeterType', $retweeter);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Framelab\Bundle\PostBundle\Entity\Post;
-use Framelab\Bundle\PostBundle\Form\PostType;
+use Framelab\Bundle\PostBundle\Form\Type\PostType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
