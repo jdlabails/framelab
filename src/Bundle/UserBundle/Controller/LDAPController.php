@@ -33,7 +33,6 @@ class LDAPController extends Controller
      */
     public function explorerAction()
     {
-        //die($this->essaiMano());
         $users = array();
         $search = $this->getRequest()->get('search');
 
@@ -78,53 +77,4 @@ class LDAPController extends Controller
 
         return $this->redirect($this->generateUrl('atelier_user_index'));
     }
-
-    /**
-     * Fonction de debug qui envoi le ldap avec des fonctions natives
-     */
-//    private function essaiMano()
-//    {
-//        $basedn = 'dc=example,dc=com';  // two basedn
-//        $filter = '(&(objectClass=*)(uid=*tesla*))';  // single filter
-//        $attributes = array('dn', 'uid', 'sn');
-//
-//        $cnx = ldap_connect('ldap.forumsys.com', 389); // single connection
-//        ldap_set_option($cnx, LDAP_OPT_PROTOCOL_VERSION, 3);
-//
-//        ldap_bind($cnx, 'cn=read-only-admin,dc=example,dc=com', 'password');  // authentication on two BDB
-//
-//        $search = ldap_search(array($cnx, $cnx, $cnx), $basedn, $filter);  // search
-//
-//        for ($i = 0; $i < count($search); $i++) {
-//            //var_dump(ldap_get_entries($cnx, $search[$i]));
-//            print "<br>";
-//        }
-//
-//        $ldap_host = $this->container->getParameter('ldap_host');
-//        $base_dn = $this->container->getParameter('ldap_baseDn');
-//        $ldap_port = $this->container->getParameter('ldap_port');
-//        $filter = $this->container->getParameter('ldap_filter');
-//        $user = $this->container->getParameter('ldap_username');
-//        $pwd = $this->container->getParameter('ldap_password');
-//
-//        $connect = ldap_connect($ldap_host, $ldap_port) or die(">>Could not connect to LDAP server<<");
-//        ldap_set_option($connect, LDAP_OPT_PROTOCOL_VERSION, 3);
-//        ldap_set_option($connect, LDAP_OPT_REFERRALS, 0);
-//
-//        // bind obligatoire apparemment
-//        $bind = ldap_bind($connect, $user, $pwd) or die(">>Could not bind to $ldap_host<<");
-//
-//        $read = ldap_search($connect, $base_dn, $filter) or die(">>Unable to search ldap server<<");
-//        //var_dump($read);
-//        $info = ldap_get_entries($connect, $read);
-//
-//        echo $info["count"]." entries returned<p>";
-//        $ii = 0;
-//        for ($i = 0; $ii < $info[$i]["count"]; $ii++) {
-//            $data = $info[$i][$ii];
-//            echo $data.":&nbsp;&nbsp;".$info[$i][$data][0]."<br>";
-//            //var_dump($info[$i]);
-//        }
-//        ldap_close($connect);
-//    }
 }
