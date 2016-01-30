@@ -15,7 +15,6 @@ trait RatableTrait
      */
     protected $rates;
 
-
     /**
      * Get id
      *
@@ -25,7 +24,6 @@ trait RatableTrait
     {
         return $this->rates;
     }
-
 
     /**
      * Get id

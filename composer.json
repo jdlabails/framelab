@@ -6,20 +6,21 @@
     "autoload": {
         "psr-4": { "Framelab\\Bundle\\": "src/Bundle/", "JD\\PhpProjectAnalyzerBundle\\": "src/JD/PhpProjectAnalyzerBundle" }
     },
-    "require": {         
+    "require": {
         
-        "php":                                  ">=5.4",
-        "symfony/symfony":                      "~2.3|~3.0",
-        "doctrine/orm":                         "^2.5",
-        "doctrine/doctrine-bundle":             "^1.6",
-        "doctrine/doctrine-cache-bundle":       "^1.2",
-        "symfony/swiftmailer-bundle":           "^2.3",
-        "symfony/monolog-bundle":               "^2.8",
-        "sensio/distribution-bundle":           "^4.0",
-        "sensio/framework-extra-bundle":        "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0",
+        "php": ">=5.3.9",
+        "symfony/symfony": "2.8.*",
+        "doctrine/orm": "^2.4.8",
+        "doctrine/doctrine-bundle": "~1.4",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
+        "sensio/distribution-bundle": "~4.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "incenteev/composer-parameter-handler": "~2.0",
+        
         "symfony/assetic-bundle":               "dev-master",
-        "twig/extensions":                      "1.0.*",        
+        "twig/extensions":                      "1.0.*",
+        
         "friendsofsymfony/user-bundle":         "~2.0@dev",
         "fr3d/ldap-bundle":                     "dev-master",
         "hwi/oauth-bundle":                     "^0.4.0",
@@ -52,15 +53,16 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "stable",    
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
+        "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.8-dev"
         }
     }
 }

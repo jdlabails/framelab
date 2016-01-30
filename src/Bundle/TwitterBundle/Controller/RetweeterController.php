@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Framelab\Bundle\TwitterBundle\Entity\Retweeter;
-use Framelab\Bundle\TwitterBundle\Form\RetweeterType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**

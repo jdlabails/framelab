@@ -3,8 +3,6 @@
 namespace Framelab\Bundle\RateBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Framelab\Bundle\RateBundle\Entity\Rate;
-use Framelab\Bundle\RateBundle\Form\RateType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
