@@ -1,4 +1,6 @@
-# Framelab [![Build Status](https://travis-ci.org/jdlabails/framelab.svg?branch=master)](https://travis-ci.org/jdlabails/framelab)
+# Framelab 
+[![Build Status](https://travis-ci.org/jdlabails/framelab.svg?branch=master)](https://travis-ci.org/jdlabails/framelab)
+[![Dependency Status](https://www.versioneye.com/user/projects/56abcb297e03c7003db68e84/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56abcb297e03c7003db68e84)
 
 ## Installation 
 

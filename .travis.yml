@@ -17,7 +17,7 @@ before_script:
     - pyrus install pear/PHP_CodeSniffer
     - phpenv rehash
     - php app/console doctrine:schema:update --force    
-    - php app/console doctrine:fixture:load --no-interaction
+    - php app/console hautelook:doctrine:fixtures:load --no-interaction
 
 script: 
     - phpunit -c app/phpunit.xml.dist --testsuite 'Complete' 

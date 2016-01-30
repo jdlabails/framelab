@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Framelab\Bundle\UserBundle\Entity\User;
 use Framelab\Bundle\UserBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserController extends Controller
 {
@@ -71,12 +72,22 @@ class UserController extends Controller
     private function createNewForm(User $entity)
     {
         return $this->createForm(
-            new UserType($this->container->getParameter('security.role_hierarchy.roles')),
+            UserType::class,
             $entity,
             [
                 'action' => $this->generateUrl('atelier_user_create'),
                 'method' => 'POST',
             ]
+        )->add(
+            'roles',
+            ChoiceType::class,
+            array(
+                'choices'   => $this->refactorRoles($this->container->getParameter('security.role_hierarchy.roles')),
+                'choices_as_values' => true,
+                'multiple'  => true,
+                'label'     => 'Rôle(s)',
+                'expanded'  => true
+            )
         );
     }
 
@@ -144,12 +155,22 @@ class UserController extends Controller
     private function createEditForm(User $entity)
     {
         return $this->createForm(
-            new UserType($this->container->getParameter('security.role_hierarchy.roles')),
+            UserType::class,
             $entity,
             [
                 'action' => $this->generateUrl('atelier_user_update', array('id' => $entity->getId())),
-                'method' => 'PUT',
+                'method' => 'POST',
             ]
+        )->add(
+            'roles',
+            Type\ChoiceType::class,
+            array(
+                'choices'   => $this->refactorRoles($this->container->getParameter('security.role_hierarchy.roles')),
+                'choices_as_values' => true,
+                'multiple'  => true,
+                'label'     => 'Rôle(s)',
+                'expanded'  => true
+            )
         );
     }
 
@@ -200,5 +221,34 @@ class UserController extends Controller
         $em->flush();
 
         return $this->redirect($this->generateUrl('atelier_user_index'));
+    }
+
+    private function refactorRoles($originRoles)
+    {
+        $roles = array();
+        $rolesAdded = array();
+
+        // Add herited roles
+        /*
+        foreach ($originRoles as $roleParent => $rolesHerit) {
+            $tmpRoles = array_values($rolesHerit);
+            $rolesAdded = array_merge($rolesAdded, $tmpRoles);
+            $roles[$roleParent] = array_combine($tmpRoles, $tmpRoles);
+        }
+        */
+
+        /**
+         * C'est ici ou on peut reformater le nom des roles en découpant par _
+         */
+
+        // Add missing superparent roles
+        $rolesParent = array_keys($originRoles);
+        foreach ($rolesParent as $roleParent) {
+            if (!in_array($roleParent, $rolesAdded)) {
+                $roles['-----'][$roleParent] = $roleParent;
+            }
+        }
+
+        return $roles;
     }
 }

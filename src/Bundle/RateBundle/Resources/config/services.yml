@@ -5,5 +5,5 @@ services:
     rate_manager:
         class: %rate_manager.class%
         arguments:
-            - @security.token_storage
-            - @doctrine.orm.default_entity_manager
+            - "@security.token_storage"
+            - "@doctrine.orm.default_entity_manager"

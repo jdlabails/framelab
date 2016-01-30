@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Framelab\Bundle\PersonBundle\Entity\Service;
 use Framelab\Bundle\PersonBundle\Form\ServiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Service controller.
@@ -61,12 +62,12 @@ class ServiceController extends Controller
      */
     private function createCreateForm(Service $entity)
     {
-        $form = $this->createForm(new ServiceType(), $entity, array(
+        $form = $this->createForm(ServiceType::class, $entity, array(
             'action' => $this->generateUrl('service_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -136,12 +137,12 @@ class ServiceController extends Controller
     */
     private function createEditForm(Service $entity)
     {
-        $form = $this->createForm(new ServiceType(), $entity, array(
+        $form = $this->createForm(ServiceType::class, $entity, array(
             'action' => $this->generateUrl('service_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }
@@ -188,7 +189,7 @@ class ServiceController extends Controller
 
         $em->remove($entity);
         $em->flush();
-            
+
         return $this->redirect($this->generateUrl('service'));
     }
 }

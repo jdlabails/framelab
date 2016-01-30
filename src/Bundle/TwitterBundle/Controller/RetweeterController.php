@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Framelab\Bundle\TwitterBundle\Entity\Retweeter;
 use Framelab\Bundle\TwitterBundle\Form\RetweeterType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Retweeter controller.
@@ -67,7 +68,7 @@ class RetweeterController extends Controller
                 'method' => 'POST',
             ]
         );
-        $form->add('submit', 'submit', ['label' => 'Create', 'attr' => ['class' => 'btn btn-success']]);
+        $form->add('submit', SubmitType::class, ['label' => 'Create', 'attr' => ['class' => 'btn btn-success']]);
 
         $form->handleRequest($request);
 

@@ -4,7 +4,6 @@ namespace Framelab\Bundle\PostBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class PostType extends AbstractType
 {
@@ -19,23 +18,5 @@ class PostType extends AbstractType
             ->add('content')
             ->add('author')
         ;
-    }
-
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Framelab\Bundle\PostBundle\Entity\Post'
-        ));
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return 'bundle_postbundle_post';
     }
 }

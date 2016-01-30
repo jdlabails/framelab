@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Framelab\Bundle\DocumentBundle\Entity\Document;
 use Framelab\Bundle\DocumentBundle\Form\DocumentType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Document controller.
@@ -70,12 +71,12 @@ class DocumentController extends Controller
      */
     private function createCreateForm(Document $entity)
     {
-        $form = $this->createForm(new DocumentType(), $entity, array(
+        $form = $this->createForm(DocumentType::class, $entity, array(
             'action' => $this->generateUrl('document_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', SubmitType::class, array('label' => 'Create'));
 
         return $form;
     }
@@ -159,12 +160,12 @@ class DocumentController extends Controller
      */
     private function createEditForm(Document $entity)
     {
-        $form = $this->createForm(new DocumentType(), $entity, array(
+        $form = $this->createForm(DocumentType::class, $entity, array(
             'action' => $this->generateUrl('document_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', SubmitType::class, array('label' => 'Update'));
 
         return $form;
     }

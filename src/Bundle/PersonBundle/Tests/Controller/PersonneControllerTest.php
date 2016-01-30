@@ -20,7 +20,7 @@ class PersonneControllerTest extends MainControllerTest
         $this->goAndCheckPage200('/person/service/new');
         $this->submitValidFormAndFollowRedirect(
             'Create',
-            ['bundle_PersonBundle_service[nom]' => $serviceNameCreate]
+            ['service[nom]' => $serviceNameCreate]
         );
 
         // le voir dans la liste des services
@@ -32,7 +32,7 @@ class PersonneControllerTest extends MainControllerTest
         $this->goAndCheckPage200('/person/service/'.$serviceId.'/edit');
         $this->submitValidFormAndFollowRedirect(
             'Update',
-            ['bundle_PersonBundle_service[nom]' => $serviceNameUpdate]
+            ['service[nom]' => $serviceNameUpdate]
         );
 
         // voir la modif
@@ -46,13 +46,13 @@ class PersonneControllerTest extends MainControllerTest
         $this->submitValidFormAndFollowRedirect(
             'Create',
             [
-            'PersonBundle_personne[prenom]' => $personNameCreate,
-            'PersonBundle_personne[nom]' => 'nom',
-            'PersonBundle_personne[email]' => 'nom@gmail.com',
-            'PersonBundle_personne[dateNaissance]' => '10/10/2014',
-            'PersonBundle_personne[tel]' => '06 66 66 66 66',
-            'PersonBundle_personne[service]' => $serviceId,
-            'PersonBundle_personne[lieuTravail]' => 'hotel'
+            'personne[prenom]' => $personNameCreate,
+            'personne[nom]' => 'nom',
+            'personne[email]' => 'nom@gmail.com',
+            'personne[dateNaissance]' => '10/10/2014',
+            'personne[tel]' => '06 66 66 66 66',
+            'personne[service]' => $serviceId,
+            'personne[lieuTravail]' => 'hotel'
             ]
         );
 
@@ -67,13 +67,13 @@ class PersonneControllerTest extends MainControllerTest
         $this->submitValidFormAndFollowRedirect(
             'Update',
             [
-            'PersonBundle_personne[prenom]' => $personNameUpdate,
-            'PersonBundle_personne[nom]' => 'nom',
-            'PersonBundle_personne[email]' => 'nom@gmail.com',
-            'PersonBundle_personne[dateNaissance]' => '10/10/2014',
-            'PersonBundle_personne[tel]' => '06 66 66 66 66',
-            'PersonBundle_personne[service]' => $serviceId,
-            'PersonBundle_personne[lieuTravail]' => 'hotel'
+            'personne[prenom]' => $personNameUpdate,
+            'personne[nom]' => 'nom',
+            'personne[email]' => 'nom@gmail.com',
+            'personne[dateNaissance]' => '10/10/2014',
+            'personne[tel]' => '06 66 66 66 66',
+            'personne[service]' => $serviceId,
+            'personne[lieuTravail]' => 'hotel'
             ]
         );
 

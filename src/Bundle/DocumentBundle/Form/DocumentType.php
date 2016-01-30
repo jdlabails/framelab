@@ -4,7 +4,7 @@ namespace Framelab\Bundle\DocumentBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class DocumentType extends AbstractType
 {
@@ -18,25 +18,7 @@ class DocumentType extends AbstractType
             ->add('name')
             ->add('date')
             ->add('description')
-            ->add('file', 'file')
+            ->add('file', FileType::class)
         ;
-    }
-
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Framelab\Bundle\DocumentBundle\Entity\Document',
-        ));
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return 'bundle_documentbundle_document';
     }
 }

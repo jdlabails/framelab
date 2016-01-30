@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80cda7c4302904749720672adba9bc20",
-    "content-hash": "95a8dcc15a5e859a5957902b22f01f86",
+    "hash": "3da0c16562ea39a75d4b4d8268dc162e",
+    "content-hash": "e6710d1c4ffdd0a285d85de49fc70091",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3030,16 +3030,16 @@
         },
         {
             "name": "jdlabails/php-project-analyzer-bundle",
-            "version": "0.12",
+            "version": "v0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdlabails/PhpProjectAnalyzerBundle.git",
-                "reference": "67372b63d2ced142f0363d765b619332130c8a2e"
+                "reference": "3f464ae2ba12c7bbb29793d45dc70266c062aebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/67372b63d2ced142f0363d765b619332130c8a2e",
-                "reference": "67372b63d2ced142f0363d765b619332130c8a2e",
+                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/3f464ae2ba12c7bbb29793d45dc70266c062aebd",
+                "reference": "3f464ae2ba12c7bbb29793d45dc70266c062aebd",
                 "shasum": ""
             },
             "require": {
@@ -3073,7 +3073,7 @@
             "keywords": [
                 "Php Project Analyzer"
             ],
-            "time": "2016-01-24 17:38:11"
+            "time": "2016-01-30 00:23:26"
         },
         {
             "name": "nelmio/alice",

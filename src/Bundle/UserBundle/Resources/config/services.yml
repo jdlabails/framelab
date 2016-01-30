@@ -4,4 +4,4 @@ parameters:
 services:
     user.ldap.ldap_manager:
         class: %user.ldap.ldap_manager.class%
-        arguments: [@fr3d_ldap.ldap_driver, @fr3d_ldap.user_manager, %fr3d_ldap.ldap_manager.parameters%]
+        arguments: ["@fr3d_ldap.ldap_driver", "@fr3d_ldap.user_manager", %fr3d_ldap.ldap_manager.parameters%]
