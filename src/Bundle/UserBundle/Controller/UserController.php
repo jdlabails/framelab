@@ -227,19 +227,6 @@ class UserController extends Controller
         $roles = array();
         $rolesAdded = array();
 
-        // Add herited roles
-        /*
-        foreach ($originRoles as $roleParent => $rolesHerit) {
-            $tmpRoles = array_values($rolesHerit);
-            $rolesAdded = array_merge($rolesAdded, $tmpRoles);
-            $roles[$roleParent] = array_combine($tmpRoles, $tmpRoles);
-        }
-        */
-
-        /**
-         * C'est ici ou on peut reformater le nom des roles en découpant par _
-         */
-
         // Add missing superparent roles
         $rolesParent = array_keys($originRoles);
         foreach ($rolesParent as $roleParent) {
