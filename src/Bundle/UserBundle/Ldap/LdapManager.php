@@ -11,14 +11,6 @@ class LdapManager extends BaseLdapManager
     {
         parent::hydrate($user, $entry);
 
-        //var_dump($user);
-
         $this->userManager->updateUser($user);
-
-        // Your custom code
-        //$user->setEmail('');
-        //$user->setEmailCanonical('');
-
-        // un petit message en flash bag pour commencer
     }
 }
