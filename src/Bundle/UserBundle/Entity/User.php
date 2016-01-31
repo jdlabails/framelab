@@ -31,7 +31,7 @@ class User extends BaseUser implements LdapUserInterface
      * cascade={"remove"})
      * @ORM\OrderBy({"date" = "desc"})
      */
-    private $documents;
+    protected $documents;
 
     /**
      * Ldap Object Distinguished Name
