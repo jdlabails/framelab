@@ -124,8 +124,8 @@ class RetweeterManager
     /**
      * Retweet the passed tweet
      *
-     * @param object $tweet
-     * @return object
+     * @param \stdClass $tweet
+     * @return \stdClass
      * @throws \Exception
      */
     public function retweet($tweet)
@@ -146,7 +146,7 @@ class RetweeterManager
      * Notifie le retweet
      *
      * @param \Framelab\Bundle\TwitterBundle\Entity\Retweeter $retweeter
-     * @param object                                            $retweet
+     * @param \stdClass                                       $retweet
      */
     public function statThis(Entity\Retweeter $retweeter, $retweet)
     {
