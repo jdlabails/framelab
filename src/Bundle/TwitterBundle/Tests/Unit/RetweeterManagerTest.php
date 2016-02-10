@@ -64,6 +64,19 @@ class RetweeterManagerTest extends \PHPUnit_Framework_TestCase
         ];
     }
 
+    public function testGetExplaination()
+    {
+        $this->assertEquals('', $this->getBaseInstance()->getExplaination());
+    }
+
+    public function testLaunch()
+    {
+        $base = $this->getBaseInstance();
+        $res = $base->launch(null);
+        $this->assertEquals(false, $res);
+        $this->assertEquals('Bad retweeter or inactive one', $base->getExplaination());
+    }
+
     protected function getBaseInstance()
     {
         $twitterConnectionMock = $this
