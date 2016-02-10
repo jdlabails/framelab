@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b3ece18bcee589d83dd5e90b0d4811c",
-    "content-hash": "b617b07ed654eca525030a7781b3158c",
+    "hash": "b04d1ce01d96b61a88d5547164aeea6a",
+    "content-hash": "86ea70318cb7841aec9afedf0f3fff18",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -411,16 +411,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b"
+                "reference": "e9c2ccf573b59b7cea566390f34254fed3c20ed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b",
-                "reference": "c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/e9c2ccf573b59b7cea566390f34254fed3c20ed9",
+                "reference": "e9c2ccf573b59b7cea566390f34254fed3c20ed9",
                 "shasum": ""
             },
             "require": {
@@ -436,6 +436,7 @@
                 "doctrine/orm": "~2.3",
                 "phpunit/phpunit": "~4",
                 "satooshi/php-coveralls": "~0.6.1",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
                 "symfony/validator": "~2.2|~3.0",
                 "symfony/yaml": "~2.2|~3.0",
                 "twig/twig": "~1.10"
@@ -485,7 +486,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-11-16 17:11:46"
+            "time": "2016-01-10 17:21:44"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -887,12 +888,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "8f1fc2273b37c61ddcc1620abf4500320a23763e"
+                "reference": "140cc28026304d3023c880f441689986f99b913b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/8f1fc2273b37c61ddcc1620abf4500320a23763e",
-                "reference": "8f1fc2273b37c61ddcc1620abf4500320a23763e",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/140cc28026304d3023c880f441689986f99b913b",
+                "reference": "140cc28026304d3023c880f441689986f99b913b",
                 "shasum": ""
             },
             "require": {
@@ -948,7 +949,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-01-27 09:36:48"
+            "time": "2016-02-05 08:53:49"
         },
         {
             "name": "hwi/oauth-bundle",
@@ -1437,16 +1438,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0"
+                "reference": "b0e69d10852716b2ccbdff69c75c477637220790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/e6f80ab77885151908d0ec743689ca700886e8b0",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b0e69d10852716b2ccbdff69c75c477637220790",
+                "reference": "b0e69d10852716b2ccbdff69c75c477637220790",
                 "shasum": ""
             },
             "require": {
@@ -1481,7 +1482,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-01-29 16:19:52"
+            "time": "2016-02-06 03:52:05"
         },
         {
             "name": "psr/log",
@@ -2952,22 +2953,22 @@
         },
         {
             "name": "hautelook/alice-bundle",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hautelook/AliceBundle.git",
-                "reference": "c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821"
+                "reference": "c2bb26ebb4e4f6056b38a1494b03cc989dcfe27a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821",
-                "reference": "c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821",
+                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/c2bb26ebb4e4f6056b38a1494b03cc989dcfe27a",
+                "reference": "c2bb26ebb4e4f6056b38a1494b03cc989dcfe27a",
                 "shasum": ""
             },
             "require": {
                 "nelmio/alice": "~2.1",
                 "php": ">=5.4.0",
-                "symfony/finder": "^2.7"
+                "symfony/finder": "^2.7|~3.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "~1.2",
@@ -2979,12 +2980,11 @@
                 "doctrine/phpcr-odm": "^1.2",
                 "jackalope/jackalope-doctrine-dbal": "^1.2",
                 "sllh/php-cs-fixer-styleci-bridge": "~1.0",
-                "symfony/console": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/phpunit-bridge": "^2.7.4",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3",
-                "theofidry/psysh-bundle": "^1.1.2"
+                "symfony/console": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "^2.7.4|~3.0",
+                "symfony/validator": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "doctrine/data-fixtures": "To use Doctrine fixtures loader",
@@ -2998,6 +2998,11 @@
                 "theofidry/alice-bundle-extension": "Behat extension for HautelookAliceBundle"
             },
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Hautelook\\AliceBundle\\": "src"
@@ -3026,20 +3031,20 @@
                 "orm",
                 "symfony"
             ],
-            "time": "2015-10-29 20:57:57"
+            "time": "2016-02-07 19:30:47"
         },
         {
             "name": "jdlabails/php-project-analyzer-bundle",
-            "version": "v1.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdlabails/PhpProjectAnalyzerBundle.git",
-                "reference": "8c2ba791a43f1087de1754ad32f2433ebf0f8377"
+                "reference": "25ca49a313d1933c785e4ddc453728cd34ccd4a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/8c2ba791a43f1087de1754ad32f2433ebf0f8377",
-                "reference": "8c2ba791a43f1087de1754ad32f2433ebf0f8377",
+                "url": "https://api.github.com/repos/jdlabails/PhpProjectAnalyzerBundle/zipball/25ca49a313d1933c785e4ddc453728cd34ccd4a8",
+                "reference": "25ca49a313d1933c785e4ddc453728cd34ccd4a8",
                 "shasum": ""
             },
             "require": {
@@ -3073,7 +3078,7 @@
             "keywords": [
                 "Php Project Analyzer"
             ],
-            "time": "2016-02-01 22:13:54"
+            "time": "2016-02-03 23:00:36"
         },
         {
             "name": "nelmio/alice",

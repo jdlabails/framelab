@@ -30,7 +30,7 @@
         "sensio/generator-bundle":               "^3.0",
         "symfony/phpunit-bridge":                "^2.7",
         "hautelook/alice-bundle":                "~1.1",
-        "jdlabails/php-project-analyzer-bundle": "~1.0",
+        "jdlabails/php-project-analyzer-bundle": "~1.1",
         "doctrine/doctrine-fixtures-bundle":     "~2.2"
     },
     "scripts": {
