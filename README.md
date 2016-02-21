@@ -1,6 +1,6 @@
 # Framelab 
 [![Build Status](https://travis-ci.org/jdlabails/framelab.svg?branch=master)](https://travis-ci.org/jdlabails/framelab)
-[![Dependency Status](https://www.versioneye.com/user/projects/56abcb297e03c7003db68e84/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56abcb297e03c7003db68e84)
+[![Dependency Status](https://www.versioneye.com/user/projects/56abcbaf7e03c7003ba40d5c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56abcbaf7e03c7003ba40d5c)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/f62308b2-5bf1-46f5-921c-ae6089afeafa/mini.png)](https://insight.sensiolabs.com/projects/f62308b2-5bf1-46f5-921c-ae6089afeafa)
 
 ## Installation 

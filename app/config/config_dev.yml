@@ -51,7 +51,7 @@ jd_php_project_analyzer:
     # quality metric : code sniffer
     cs :
         enable: true
-        standard: PSR2
+        standard: Symfony2
 
     # quality metric : php depend
     depend : false
