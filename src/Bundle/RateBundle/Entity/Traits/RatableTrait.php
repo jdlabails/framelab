@@ -2,8 +2,6 @@
 
 namespace Framelab\Bundle\RateBundle\Entity\Traits;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * trait used to make an entity ratable
  */
