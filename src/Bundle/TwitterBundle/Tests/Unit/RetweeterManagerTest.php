@@ -48,7 +48,8 @@ class RetweeterManagerTest extends \PHPUnit_Framework_TestCase
 
         $retweeterManager = $this->getBaseInstance();
 
-        $this->assertEquals($res, round($retweeterManager->calculateProbabilityToRetweet($retweeter), 3));
+        $proba = $retweeterManager->calculateProbabilityToRetweet($retweeter);
+        $this->assertEquals((float)round($res, 3), (float)round($proba, 3));
     }
 
     public function calculateProbabilityToRetweetProvider()
@@ -61,6 +62,19 @@ class RetweeterManagerTest extends \PHPUnit_Framework_TestCase
             'Retweet il y a 1h : 1 chance sur 8' => [new \DateTime('-1 hour'), 4, 1/8],
             'Retweet il y a 2h : 1 chance sur 4' => [new \DateTime('-2 hour'), 4, 1/4],
         ];
+    }
+
+    public function testGetExplaination()
+    {
+        $this->assertEquals('', $this->getBaseInstance()->getExplaination());
+    }
+
+    public function testLaunch()
+    {
+        $base = $this->getBaseInstance();
+        $res = $base->launch(null);
+        $this->assertEquals(false, $res);
+        $this->assertEquals('Bad retweeter or inactive one', $base->getExplaination());
     }
 
     protected function getBaseInstance()

@@ -63,10 +63,10 @@ class RetweeterManager
      * @param \Framelab\Bundle\TwitterBundle\Entity\Retweeter $retweeter
      * @return boolean
      */
-    public function launch(Entity\Retweeter $retweeter)
+    public function launch(Entity\Retweeter $retweeter = null)
     {
         if (is_null($retweeter) || !$retweeter->getActif()) {
-            $this->explaination = $retweeter->getName().' is a bad retweeter or inactive one';
+            $this->explaination = 'Bad retweeter or inactive one';
             $this->logger->critical($this->explaination);
 
             return false;
