@@ -61,7 +61,6 @@ class LDAPController extends Controller
             $session = $this->get('session');
             $session->getFlashBag()->add('warning', 'Utilisateur déjà Sesamé !');
         } else {
-
             $ldapUserProvider = $this->get('fr3d_ldap.security.user.provider');
             $user = $ldapUserProvider->loadUserByUsername($userName);
 

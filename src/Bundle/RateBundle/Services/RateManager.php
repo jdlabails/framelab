@@ -41,7 +41,6 @@ class RateManager
         $usr = $this->getCurrentUser();
 
         if ($usr instanceof User) {
-
             $entity = new Rate();
 
             $entity->setDate(new \DateTime);
